@@ -9,3 +9,17 @@ gradle-app.setting
 
 # Cache of project
 .gradletasknamecache
+.idea/workspace.xml
+sandbox/sandbox.iml
+sandbox/.idea/vcs.xml
+sandbox/.idea/scopes/scope_settings.xml
+sandbox/.idea/misc.xml
+sandbox/.idea/encodings.xml
+sandbox/.idea/.name
+.idea/misc.xml
+sandbox/.idea/compiler.xml
+sandbox/.idea/modules.xml
+sandbox/.idea/gradle.xml
+sandbox/.idea/workspace.xml
+sandbox/.idea/copyright/profiles_settings.xml
+sandbox/.idea/uiDesigner.xml

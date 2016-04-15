@@ -4,8 +4,8 @@ package ru.jft.secondProgram;
  * Created by Home on 09.04.2016.
  */
 public class Point {
-  int x;
-  int y;
+  private int x;
+  private int y;
 
   public Point(int x, int y) {
     setX(x);
@@ -18,6 +18,14 @@ public class Point {
 
   public void setY(int y) {
     this.y = y;
+  }
+
+  public int getY() {
+    return y;
+  }
+
+  public int getX() {
+    return x;
   }
 
   public double distance(Point p2) {

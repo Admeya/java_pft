@@ -14,7 +14,7 @@ public class ContactModificationTests extends TestBase {
     app.getContactHelper().selectContact();
 
     app.getContactHelper().initContactModification();
-    app.getContactHelper().fillContactInfo(new ContactData("Антуан", "Сергеевич", "Заляутдинов", "Zollas", "специалист", "Dosker", "Москва, 5 Пролетарский проезд, д. 17, кв. 1", "523-43-65", "89908761223"));
+    app.getContactHelper().fillContactInfo(new ContactData("Антуан", "Сергеевич", "Заляутдинов", "Zollas", "специалист", "Dosker", "Москва, 5 Пролетарский проезд, д. 17, кв. 1", "523-43-65", "89908761223", null), false);
     app.getContactHelper().submitContactModification();
   }
 }

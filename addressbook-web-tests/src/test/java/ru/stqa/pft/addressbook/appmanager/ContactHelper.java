@@ -39,7 +39,7 @@ public class ContactHelper extends HelperBase{
   }
 
   public void selectContact() {
-    click(By.xpath("//input[@name='selected[]']"));
+    click(By.name("selected[]"));
   }
 
   public void deleteSelectedContact() {
@@ -53,5 +53,14 @@ public class ContactHelper extends HelperBase{
 
   public void submitContactModification() {
     click(By.name("update"));
+  }
+
+  public void createContact(ContactData contactData, boolean creation) {
+    fillContactInfo(contactData, creation);
+    submitContactInfo();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
   }
 }

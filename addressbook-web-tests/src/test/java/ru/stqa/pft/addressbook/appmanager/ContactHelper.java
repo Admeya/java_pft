@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 import java.util.ArrayList;
@@ -36,9 +35,6 @@ public class ContactHelper extends HelperBase{
 
     if (creation){
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-    } else {
-      Assert.assertFalse(isElementPresent(By.name("new_group")));
-
     }
   }
 
@@ -61,7 +57,6 @@ public class ContactHelper extends HelperBase{
 
   public void createContact(ContactData contactData, boolean creation) {
     fillContactInfo(contactData, creation);
-
   }
 
   public boolean isThereAContact() {
@@ -78,7 +73,8 @@ public class ContactHelper extends HelperBase{
     for (WebElement element: elements){
       String name = element.findElement(By.xpath(".//td[3]")).getText();
       String lastName = element.findElement(By.xpath(".//td[2]")).getText();
-      ContactData contact  = new ContactData(name, lastName, "test1");
+      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+      ContactData contact  = new ContactData(id, name, lastName, "test1");
       contacts.add(contact);
     }
     return contacts;

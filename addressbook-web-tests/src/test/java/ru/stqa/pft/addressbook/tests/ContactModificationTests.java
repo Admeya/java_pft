@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ContactModificationTests extends TestBase {
 
-  @Test
+  @Test(enabled = false)
   public void testGroupModification(){
     app.getNavigationHelper().goToGroupPage();
     if (! app.getGroupHelper().isThereAGroup()){

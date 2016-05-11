@@ -15,24 +15,24 @@ public class ContactModificationTests extends TestBase {
 
   @Test(enabled = false)
   public void testGroupModification(){
-    app.getNavigationHelper().goToGroupPage();
-    if (! app.getGroupHelper().isThereAGroup()){
-      app.getGroupHelper().createGroup(new GroupData("test1", "test1", "test1"));
+    app.goTo().groupPage();
+    if (! app.group().isThereAGroup()){
+      app.group().create(new GroupData("test1", "test1", "test1"));
     }
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     if (! app.getContactHelper().isThereAContact()){
-      app.getNavigationHelper().goToAddNewContact();
+      app.goTo().goToAddNewContact();
       app.getContactHelper().createContact(new ContactData("Авраам", "Линкольн", "test1"),true);
       app.getContactHelper().submitContactInfo();
     }
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     List<ContactData> before = app.getContactHelper().getContactList();
     app.getContactHelper().selectContact(before.size()-1);
     ContactData contact = new ContactData(before.get(before.size()-1).getId(),"Авраам", "Невский", "test1");
     app.getContactHelper().initContactModification(before.size());
     app.getContactHelper(). createContact(contact, false);
     app.getContactHelper().submitContactModification();
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size());
 

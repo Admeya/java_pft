@@ -13,7 +13,7 @@ public class GroupCreationTests extends TestBase {
   public void GroupCreationTests() {
     app.goTo().groupPage();
     List<GroupData> before = app.group().list();
-    GroupData group = new GroupData("test2", null, null);
+    GroupData group = new GroupData().withName("test2");
     app.group().create(group);
     List<GroupData> after = app.group().list();
     Assert.assertEquals(after.size(), before.size() + 1);
@@ -23,7 +23,6 @@ public class GroupCreationTests extends TestBase {
     before.sort(byId);
     after.sort(byId);
     Assert.assertEquals(before, after);
-
   }
 
 }

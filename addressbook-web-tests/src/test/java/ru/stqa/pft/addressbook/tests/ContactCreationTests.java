@@ -15,7 +15,7 @@ public class ContactCreationTests extends TestBase {
   public void ContactCreationTests() {
     app.goTo().groupPage();
     if (! app.group().isThereAGroup()){
-      app.group().create(new GroupData("test1", "test1", "test1"));
+      app.group().create(new GroupData().withName("test1").withHeader("test1").withFooter("test1"));
     }
     app.goTo().goToHomePage();
     List<ContactData> before = app.getContactHelper().getContactList();

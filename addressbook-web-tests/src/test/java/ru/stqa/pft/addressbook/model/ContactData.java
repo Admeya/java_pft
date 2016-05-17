@@ -14,6 +14,10 @@ public class ContactData {
   private String group;
   private String workPhone;
   private String allPhones;
+  private String email;
+  private String email2;
+  private String email3;
+  private String allEmails;
 
   public int getId() { return id; }
   public String getGroup() {
@@ -37,17 +41,19 @@ public class ContactData {
   public String getCompany() {
     return company;
   }
-  public String getAddress() {
-    return address;
-  }
+  public String getAddress() { return address; }
   public String getHomePhone() {
     return homePhone;
   }
   public String getMobilePhone() {
     return mobilePhone;
   }
-  public String getWorkPhone() { return workPhone;}
+  public String getWorkPhone() { return workPhone; }
   public String getAllPhones() { return allPhones; }
+  public String getEmail() { return email; }
+  public String getEmail2() { return email2; }
+  public String getEmail3() { return email3; }
+  public String getAllEmails() { return allEmails; }
 
   public ContactData withId(int id) {
     this.id = id;
@@ -114,6 +120,25 @@ public class ContactData {
     return this;
   }
 
+  public ContactData withEmail(String email) {
+    this.email = email;
+    return this;
+  }
+
+  public ContactData withEmail2(String email2) {
+    this.email2 = email2;
+    return this;
+  }
+
+  public ContactData withEmail3(String email3) {
+    this.email3 = email3;
+    return this;
+  }
+
+  public ContactData withAllEmails(String allEmails) {
+    this.allEmails = allEmails;
+    return this;
+  }
 
   @Override
   public String toString() {
@@ -141,7 +166,6 @@ public class ContactData {
     result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
     return result;
   }
-
 
 
 }

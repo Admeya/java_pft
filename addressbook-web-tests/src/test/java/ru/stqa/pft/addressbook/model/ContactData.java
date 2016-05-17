@@ -1,97 +1,102 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactData {
-  private int id;
-  private final String firstname;
-  private final String middlename;
-  private final String lastname;
-  private final String nickname;
-  private final String title;
-  private final String company;
-  private final String address;
-  private final String homePhone;
-  private final String mobilePhone;
+  private int id = Integer.MAX_VALUE;
+  private String firstname;
+  private String middlename;
+  private String lastname;
+  private String nickname;
+  private String title;
+  private String company;
+  private String address;
+  private String homePhone;
+  private String mobilePhone;
+  private String group;
 
   public String getGroup() {
     return group;
   }
-
-  private String group;
-
-  public ContactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String homePhone, String mobilePhone, String group) {
-    this.firstname = firstname;
-    this.middlename = middlename;
-    this.lastname = lastname;
-    this.nickname = nickname;
-    this.title = title;
-    this.company = company;
-    this.address = address;
-    this.homePhone = homePhone;
-    this.mobilePhone = mobilePhone;
-    this.group = group;
-  }
-
-  public ContactData(String firstname, String lastname, String group) {
-    this.firstname = firstname;
-    this.middlename = null;
-    this.lastname = lastname;
-    this.nickname = null;
-    this.title = null;
-    this.company = null;
-    this.address = null;
-    this.homePhone = null;
-    this.mobilePhone = null;
-    this.group = group;
-  }
-
-  public ContactData(int id, String firstname, String lastname, String group) {
-    this.id = id;
-    this.firstname = firstname;
-    this.middlename = null;
-    this.lastname = lastname;
-    this.nickname = null;
-    this.title = null;
-    this.company = null;
-    this.address = null;
-    this.homePhone = null;
-    this.mobilePhone = null;
-    this.group = group;
-  }
-
   public String getFirstname() {
     return firstname;
   }
-
   public String getMiddlename() {
     return middlename;
   }
-
   public String getLastname() {
     return lastname;
   }
-
   public String getNickname() {
     return nickname;
   }
-
   public String getTitle() {
     return title;
   }
-
   public String getCompany() {
     return company;
   }
-
   public String getAddress() {
     return address;
   }
-
   public String getHomePhone() {
     return homePhone;
   }
-
   public String getMobilePhone() {
     return mobilePhone;
+  }
+
+  public ContactData withId(int id) {
+    this.id = id;
+    return this;
+  }
+
+  public ContactData withName(String firstname) {
+    this.firstname = firstname;
+    return this;
+  }
+
+  public ContactData withMiddleName(String middlename) {
+    this.middlename = middlename;
+    return this;
+  }
+
+  public ContactData withLastName(String lastname) {
+    this.lastname = lastname;
+    return this;
+  }
+
+  public ContactData withNickName(String nickname) {
+    this.nickname = nickname;
+    return this;
+  }
+
+  public ContactData withTitle(String title) {
+    this.title = title;
+    return this;
+  }
+
+  public ContactData withCompany(String company) {
+    this.company = company;
+    return this;
+  }
+
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+  }
+
+  public ContactData withHomePhone(String homePhone) {
+    this.homePhone = homePhone;
+    return this;
+  }
+
+  public ContactData withMobilePhone(String mobilePhone) {
+    this.mobilePhone = mobilePhone;
+    return this;
+  }
+
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
   }
 
   @Override
@@ -125,7 +130,5 @@ public class ContactData {
     return id;
   }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+
 }

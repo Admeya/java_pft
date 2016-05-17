@@ -12,7 +12,9 @@ public class ContactData {
   private String homePhone;
   private String mobilePhone;
   private String group;
+  private String workPhone;
 
+  public int getId() { return id; }
   public String getGroup() {
     return group;
   }
@@ -43,6 +45,7 @@ public class ContactData {
   public String getMobilePhone() {
     return mobilePhone;
   }
+  public String getWorkPhone() { return workPhone;}
 
   public ContactData withId(int id) {
     this.id = id;
@@ -99,6 +102,11 @@ public class ContactData {
     return this;
   }
 
+  public ContactData withWorkPhone(String workPhone) {
+    this.workPhone = workPhone;
+    return this;
+  }
+
   @Override
   public String toString() {
     return "ContactData{" +
@@ -126,9 +134,7 @@ public class ContactData {
     return result;
   }
 
-  public int getId() {
-    return id;
-  }
+
 
 
 }

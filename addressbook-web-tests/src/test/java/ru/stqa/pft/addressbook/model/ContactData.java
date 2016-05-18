@@ -11,13 +11,20 @@ public class ContactData {
   private String address;
   private String homePhone;
   private String mobilePhone;
-  private String group;
   private String workPhone;
+  private String faxPhone;
   private String allPhones;
   private String email;
   private String email2;
   private String email3;
   private String allEmails;
+  private String homePage;
+  private String birthdate;
+  private String anniversary;
+  private String address2;
+  private String phone2;
+  private String notes;
+  private String group;
 
   public int getId() { return id; }
   public String getGroup() {
@@ -54,6 +61,13 @@ public class ContactData {
   public String getEmail2() { return email2; }
   public String getEmail3() { return email3; }
   public String getAllEmails() { return allEmails; }
+  public String getFaxPhone() { return faxPhone; }
+  public String getHomePage() { return homePage; }
+  public String getBirthdate() { return birthdate; }
+  public String getAnniversary() { return anniversary; }
+  public String getAddress2() { return address2; }
+  public String getPhone2() { return phone2; }
+  public String getNotes() { return notes; }
 
   public ContactData withId(int id) {
     this.id = id;
@@ -137,6 +151,41 @@ public class ContactData {
 
   public ContactData withAllEmails(String allEmails) {
     this.allEmails = allEmails;
+    return this;
+  }
+
+  public ContactData withFaxPhone(String faxPhone) {
+    this.faxPhone = faxPhone;
+    return this;
+  }
+
+  public ContactData withHomePage(String homePage) {
+    this.homePage = homePage;
+    return this;
+  }
+
+  public ContactData withBirthdate(String birthdate) {
+    this.birthdate = birthdate;
+    return this;
+  }
+
+  public ContactData withAnniversary(String anniversary) {
+    this.anniversary = anniversary;
+    return this;
+  }
+
+  public ContactData withAddress2(String address2) {
+    this.address2 = address2;
+    return this;
+  }
+
+  public ContactData withPhone2(String phone2) {
+    this.phone2 = phone2;
+    return this;
+  }
+
+  public ContactData withNotes(String notes) {
+    this.notes = notes;
     return this;
   }
 

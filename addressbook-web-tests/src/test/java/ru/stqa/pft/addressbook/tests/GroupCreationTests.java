@@ -22,6 +22,8 @@ import static org.hamcrest.junit.MatcherAssert.assertThat;
 
 public class GroupCreationTests extends TestBase {
 
+
+
   @DataProvider
   public Iterator<Object[]> validGroups() throws IOException {
     List<Object[]> list = new ArrayList<Object[]>();

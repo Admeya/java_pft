@@ -5,12 +5,16 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
+import java.io.IOException;
+
+import static java.lang.System.getProperty;
+
 /**
  * Created by Home on 18.04.2016.
  */
-public class TestBase {
+public class TestBase{
 
-  protected static final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
+  protected final static ApplicationManager app = new ApplicationManager(getProperty("browser", BrowserType.CHROME));
 
   @AfterSuite
   public void tearDown() {

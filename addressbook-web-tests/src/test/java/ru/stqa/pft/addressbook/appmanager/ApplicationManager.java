@@ -31,9 +31,6 @@ public class ApplicationManager {
     properties = new Properties();
   }
 
-  public ApplicationManager(){
-  }
-
   public static boolean isAlertPresent(FirefoxDriver wd) {
     try {
       wd.switchTo().alert();

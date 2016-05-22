@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * Created by Home on 18.04.2016.
  */
 public class ApplicationManager {
-
+  private Properties properties;
   WebDriver wd;
 
   private GroupHelper groupHelper;
@@ -26,9 +26,13 @@ public class ApplicationManager {
   private ContactHelper contactHelper ;
   private String browser;
 
-  public ApplicationManager(String browser) throws IOException {
+  public ApplicationManager(String browser){
     this.browser = browser;
-    }
+    properties = new Properties();
+  }
+
+  public ApplicationManager(){
+  }
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
     try {
@@ -41,8 +45,7 @@ public class ApplicationManager {
 
   public void init() throws IOException {
     String target = System.getProperty("target", "local");
-    Properties properties = new Properties();
-    properties.load(new FileReader(new File(String.format("addressbook-web-tests/src/test/resources/%s.properties",target))));
+    properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties",target))));
 
     if (browser.equals(BrowserType.FIREFOX)){
       wd = new FirefoxDriver();

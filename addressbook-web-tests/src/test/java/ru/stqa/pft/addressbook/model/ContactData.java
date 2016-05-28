@@ -1,38 +1,68 @@
 package ru.stqa.pft.addressbook.model;
 
 import com.google.gson.annotations.Expose;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
 
+@Entity
+@Table(name="addressbook")
 public class ContactData {
+  @Id
   private int id = Integer.MAX_VALUE;
   @Expose
+  @Column(name="firstname")
   private String firstname;
   private String middlename;
   @Expose
+  @Column(name="lastname")
   private String lastname;
   private String nickname;
   private String title;
   private String company;
+  @Type(type="text")
   private String address;
+  @Column(name="home")
+  @Type(type="text")
   private String homePhone;
+  @Column(name="mobile")
+  @Type(type="text")
   private String mobilePhone;
+  @Column(name="work")
+  @Type(type="text")
   private String workPhone;
+  @Column(name="fax")
+  @Type(type="text")
   private String faxPhone;
+  @Transient
   private String allPhones;
+  @Type(type="text")
   private String email;
+  @Type(type="text")
   private String email2;
+  @Type(type="text")
   private String email3;
+  @Transient
   private String allEmails;
+  @Type(type="text")
   private String homePage;
+  @Transient
   private String birthdate;
+  @Transient
   private String anniversary;
+  @Type(type="text")
   private String address2;
+  @Type(type="text")
   private String phone2;
+  @Type(type="text")
   private String notes;
   @Expose
+  @Transient
   private String group;
-  private File photo;
+  @Column(name="photo")
+  @Type(type="text")
+  private String photo;
 
   public int getId() { return id; }
   public String getGroup() {
@@ -76,7 +106,7 @@ public class ContactData {
   public String getAddress2() { return address2; }
   public String getPhone2() { return phone2; }
   public String getNotes() { return notes; }
-  public File getPhoto() { return photo; }
+  public File getPhoto() { return new File(photo); }
 
   public ContactData withId(int id) {
     this.id = id;
@@ -199,7 +229,7 @@ public class ContactData {
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 

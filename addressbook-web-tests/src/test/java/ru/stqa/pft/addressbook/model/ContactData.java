@@ -61,7 +61,7 @@ public class ContactData {
   @Transient
   private String group;
   @Column(name="photo")
-  @Type(type="text")
+  @Transient
   private String photo;
 
   public int getId() { return id; }

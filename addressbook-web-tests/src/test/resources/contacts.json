@@ -1,17 +1,28 @@
 [
   {
     "firstname": "Name 0",
+    "middlename": "middlename 0",
     "lastname": "Surname 0",
-    "group": "test 0"
+    "nickname": "nickname 0",
+    "title": "title 0",
+    "company": "company 0",
+    "address": "address 0",
+    "homePhone": "homePhone 0",
+    "group": "test 0",
+    "mobilePhone": "mobilePhone 0",
+    "workPhone": "workPhone 0",
+    "photo": "src/test/resources/image.jpg"
   },
   {
     "firstname": "Name 1",
     "lastname": "Surname 1",
-    "group": "test 1"
+    "group": "test 1",
+    "photo": "src/test/resources/image.jpg"
   },
   {
     "firstname": "Name 2",
     "lastname": "Surname 2",
-    "group": "test 2"
+    "group": "test 2",
+    "photo": "src/test/resources/image.jpg"
   }
 ]

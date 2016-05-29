@@ -19,7 +19,7 @@ public class ContactDeletionTests extends TestBase {
     }
     if (app.db().contacts().size()==0) {
       app.goTo().addNewContact();
-      app.contact().create(new ContactData().withName("Игорь").withMiddleName("Сергеевич").withLastName("Deletion").withNickName("Zollas").withTitle("специалист").withCompany("Dosker").withAddress("Москва, 5 Пролетарский проезд, д. 17, кв. 1").withHomePhone("523-43-65").withMobilePhone("89908761223").withGroup("test1"), true);
+      app.contact().create(new ContactData().withName("Игорь").withMiddleName("Сергеевич").withLastName("Deletion").withNickName("Zollas").withTitle("специалист").withCompany("Dosker").withAddress("Москва, 5 Пролетарский проезд, д. 17, кв. 1").withHomePhone("523-43-65").withMobilePhone("89908761223"), true);
     }
   }
 

@@ -6,6 +6,7 @@ import com.beust.jcommander.ParameterException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -54,7 +55,7 @@ public class ContactDataGenerator {
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i = 0; i < count; i++) {
       contacts.add(new ContactData().withName(String.format("Name %s", i))
-              .withLastName(String.format("Surname %s", i)).withGroup(String.format("test %s", i)));
+              .withLastName(String.format("Surname %s", i)).inGroup(new GroupData().withName(String.format("test %s", i))));
     }
     return contacts;
   }

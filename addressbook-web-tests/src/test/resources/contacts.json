@@ -1,14 +1,17 @@
 [
   {
     "firstname": "Name 0",
-    "lastname": "Surname 0"
+    "lastname": "Surname 0",
+    "photo": "src/test/resources/image.jpg"
   },
   {
     "firstname": "Name 1",
-    "lastname": "Surname 1"
+    "lastname": "Surname 1",
+    "photo": "src/test/resources/image.jpg"
   },
   {
     "firstname": "Name 2",
-    "lastname": "Surname 2"
+    "lastname": "Surname 2",
+    "photo": "src/test/resources/image.jpg"
   }
 ]

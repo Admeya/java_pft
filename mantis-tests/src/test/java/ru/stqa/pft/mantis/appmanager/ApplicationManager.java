@@ -5,20 +5,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.HttpSessionId;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by Home on 18.04.2016.
- */
+
 public class ApplicationManager {
-  private Properties properties;
-  private WebDriver wd;
+    private Properties properties;
+    private WebDriver wd;
+    private MailHelper mailHelper;
 
     private String browser;
     private RegistrationHelper registrationHelper;
@@ -77,5 +74,12 @@ public class ApplicationManager {
             wd.get(properties.getProperty("web.baseUrl"));
         }
         return wd;
+    }
+
+    public MailHelper mail(){
+        if (mailHelper == null){
+            mailHelper = new MailHelper(this);
+        }
+        return mailHelper;
     }
 }

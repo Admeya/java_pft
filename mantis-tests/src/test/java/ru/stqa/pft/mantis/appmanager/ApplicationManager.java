@@ -19,6 +19,8 @@ public class ApplicationManager {
 
     private String browser;
     private RegistrationHelper registrationHelper;
+    private AutorizationHelper autorizationHelper;
+    private HbConnectionHelper hbConnectionHelper;
     private FtpHelper ftp;
 
     public ApplicationManager(String browser){
@@ -51,6 +53,20 @@ public class ApplicationManager {
             registrationHelper = new RegistrationHelper(this);
         }
         return registrationHelper;
+    }
+
+    public AutorizationHelper autorization() {
+        if (autorizationHelper == null ) {
+            autorizationHelper = new AutorizationHelper(this);
+        }
+        return autorizationHelper;
+    }
+
+    public HbConnectionHelper hbConnection() {
+        if (hbConnectionHelper == null ) {
+            hbConnectionHelper = new HbConnectionHelper();
+        }
+        return hbConnectionHelper;
     }
 
     public FtpHelper ftp(){

@@ -23,7 +23,7 @@ public class HelperBase {
     wd.findElement(locator).click();
   }
 
-  protected void type(By locator, String text) {
+  public void type(By locator, String text) {
     if (text != null) {
       click(locator);
       String existingText =  wd.findElement(locator).getAttribute("value");

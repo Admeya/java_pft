@@ -13,19 +13,19 @@ import java.util.List;
 
 public class TestBase {
 
-  protected static final ApplicationManager app
+  protected ApplicationManager app
           = new ApplicationManager(System.getProperty("browser", BrowserType.FIREFOX));
 
   @AfterSuite
   public void tearDown() throws IOException {
-    //app.ftp().restore("config_inc.php.bak", "config_inc.php");
+    app.ftp().restore("config_inc.php.bak", "config_inc.php");
     app.stop();
   }
 
   @BeforeSuite
   public void setUp() throws Exception {
     app.init();
-    //app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
+    app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
   }
 
   public String findConfirmationLink(List<MailMessage> mailMessages, String email) {

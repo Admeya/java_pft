@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="addressbook")
+@Table(name="mantis_user_table")
 public class UserData {
 
     @Id
@@ -23,6 +23,14 @@ public class UserData {
 
     @Column(name="email")
     private String email;
+
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
     public String getEmail() {
         return email;

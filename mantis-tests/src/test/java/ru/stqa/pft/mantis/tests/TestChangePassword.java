@@ -23,18 +23,19 @@ public class TestChangePassword extends TestBase{
 
     @Test
    public void changePasswordTest() throws IOException, MessagingException {
-       app.autorization().login("administrator", "root"); // System.getProperty("web.adminLogin"), System.getProperty("web.adminPass")
+       app.autorization().login(app.getProperty("web.adminLogin"), app.getProperty("web.adminPass")); //
        app.autorization().clickToLink("Manage Users");
         List<UserData> users = app.hbConnection().queryToUserTable();
-       String user = app.autorization().selectUser(users).getUserName();//"user1";//
-       String email = app.autorization().selectUser(users).getEmail(); //user1@localhost.localdomain";
-       String password = "111";
-       app.autorization().clickToLink(user);
+
+        UserData user = app.autorization().selectUser(users);
+       String nameUser = user.getUserName();
+       String email = user.getEmail();
+       app.autorization().clickToLink(nameUser);
        app.autorization().clickToBtn("Reset Password");
-       List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
+       List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);
        String confirmationLink = findConfirmationLink(mailMessages, email);
-       app.registration().finish(confirmationLink,  password);
-       assertTrue(app.newSession().login(user, password));
+       app.registration().finish(confirmationLink,  app.getProperty("web.newPass"));
+       assertTrue(app.newSession().login(nameUser, app.getProperty("web.newPass")));
    }
 
     @AfterMethod(alwaysRun = true)

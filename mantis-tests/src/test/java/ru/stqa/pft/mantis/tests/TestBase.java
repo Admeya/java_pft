@@ -18,14 +18,14 @@ public class TestBase {
 
   @AfterSuite
   public void tearDown() throws IOException {
-    app.ftp().restore("config_inc.php.bak", "config_inc.php");
+    //app.ftp().restore("config_inc.php.bak", "config_inc.php");
     app.stop();
   }
 
   @BeforeSuite
   public void setUp() throws Exception {
     app.init();
-    app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
+    //app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
   }
 
   public String findConfirmationLink(List<MailMessage> mailMessages, String email) {

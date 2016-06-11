@@ -35,11 +35,11 @@ public class AutorizationHelper extends HelperBase{
 
     public UserData selectUser(List<UserData> users){
         int i = 0;
-        String nameUser = users.get(i).getUserName();
-        if (nameUser.equals(System.getProperty("web.adminLogin"))){
+        UserData user = users.get(i);
+        if (user.getUserName().equals(app.getProperty("web.adminLogin"))){
             i++;
-            nameUser = users.get(i).getUserName();
+            user = users.get(i);
         }
-        return users.get(i);
+        return user;
     }
 }
